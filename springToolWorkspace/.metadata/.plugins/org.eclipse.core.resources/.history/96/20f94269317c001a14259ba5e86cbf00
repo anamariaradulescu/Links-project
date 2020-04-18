@@ -1,0 +1,20 @@
+package com.example.demo.services;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class LinkServiceImpl implements LinkService {
+
+	@Override
+	public boolean domainExists(String name) {
+		
+		if(domainExists(name)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	
+
+}

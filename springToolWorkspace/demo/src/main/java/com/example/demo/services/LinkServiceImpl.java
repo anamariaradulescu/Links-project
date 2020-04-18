@@ -1,0 +1,66 @@
+package com.example.demo.services;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.management.RuntimeErrorException;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.demo.entities.Domain;
+import com.example.demo.entities.Link;
+import com.example.demo.functionality.UrlParser;
+
+@Service
+public class LinkServiceImpl extends AbstractServiceBaseImpl implements LinkService {
+
+	@Override
+	public boolean domainExists(String name) {
+
+		return domainRepos.existsByName(name);
+	}
+
+	@Override
+	public List<Link> getLinks(String name) {
+		if (!domainExists(name)) {
+			return null;
+		}
+
+		Domain domain = domainRepos.findByName(name);
+		return linkRepos.findAllByDomain(domain);
+	}
+
+	@Transactional
+	@Override
+	public List<Link> handleLinks(String domainName) {
+
+		if (domainExists(domainName)) {
+			return getLinks(domainName);
+		}
+
+		List<Link> links = new ArrayList<>();
+		try {
+			links = UrlParser.extractLinks(domainName);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		Domain domain = new Domain();
+		domain.setName(domainName);
+		domainRepos.save(domain);
+
+		for (Link link : links) {
+			Link newLink = new Link();
+			newLink.setDomain(domain);
+			newLink.setType(link.getType());
+			newLink.setUrl(link.getUrl());
+			linkRepos.save(newLink);
+		}
+		return getLinks(domainName);
+
+	}
+
+}

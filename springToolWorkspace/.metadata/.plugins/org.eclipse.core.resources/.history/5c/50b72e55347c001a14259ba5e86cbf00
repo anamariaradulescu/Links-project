@@ -1,0 +1,16 @@
+package com.example.demo.services;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class LinkServiceImpl extends AbstractServiceBaseImpl implements LinkService  {
+
+	@Override
+	public boolean domainExists(String name) {
+		
+		return domainRepos.existsByName(name);
+	}
+	
+	
+
+}

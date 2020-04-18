@@ -1,0 +1,152 @@
+package com.example.demo;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.demo.functionality.UrlParser;
+
+@SpringBootTest
+class DemoApplicationTests {
+
+	@Test
+	void extractLinksTest() throws IOException {
+		UrlParser urlParser= new UrlParser();
+		String site = "https://www.google.com";
+	    List<String> links = urlParser.extractLinks(site);
+	    for (String link : links) {
+	      System.out.println(link);
+	    }
+	}
+	public void createLinksList() {
+	https://www.rgagnon.com/topics/js-language.html
+		https://www.rgagnon.com/topics/js-htmlcss.html
+		https://www.rgagnon.com/topics/js-form.html
+		https://www.rgagnon.com/topics/java-js.html
+		https://www.rgagnon.com/topics/js-mobile.html
+		https://www.rgagnon.com/topics/js-varia.html
+		https://www.rgagnon.com/topics/java-language.html
+		https://www.rgagnon.com/topics/java-stringnumber.html
+		https://www.rgagnon.com/topics/java-awt.html
+		https://www.rgagnon.com/topics/java-swing.html
+		https://www.rgagnon.com/topics/java-env.html
+		https://www.rgagnon.com/topics/java-io.html
+		https://www.rgagnon.com/topics/java-js.html
+		https://www.rgagnon.com/topics/java-jdbc.html
+		https://www.rgagnon.com/topics/java-thread.html
+		https://www.rgagnon.com/topics/java-net.html
+		https://www.rgagnon.com/topics/java-jsp.html
+		https://www.rgagnon.com/topics/java-xml.html
+		https://www.rgagnon.com/topics/java-inter.html
+		https://www.rgagnon.com/topics/java-security.html
+		https://www.rgagnon.com/topics/java-jni.html
+		https://www.rgagnon.com/topics/java-date.html
+		https://www.rgagnon.com/topics/java-os.html
+		https://www.rgagnon.com/topics/java-varia.html
+		https://www.rgagnon.com/topics/pb-powerscript.html
+		https://www.rgagnon.com/topics/pb-winapiregistry.html
+		https://www.rgagnon.com/topics/pb-datawindow.html
+		https://www.rgagnon.com/topics/pb-pfc.html
+		https://www.rgagnon.com/topics/pb-common.html
+		https://www.rgagnon.com/topics/pb-database.html
+		https://www.rgagnon.com/topics/wsh-vbs.html
+		https://www.rgagnon.com/topics/gp.html
+		https://www.rgagnon.com/bigindex.html
+		https://www.rgagnon.com/download/index.html
+		https://www.rgagnon.com/varia/faq-e.html
+		https://www.rgagnon.com/varia/contact.html
+		https://www.rgagnon.com/donate.html
+		https://www.rgagnon.com/varia/funny-1.html
+		https://www.rgagnon.com/varia/funny-2.html
+		https://www.rgagnon.com/varia/funny-3.html
+		https://www.rgagnon.com/varia/funny-4.html
+		https://www.rgagnon.com/varia/oneline.html
+		https://www.rgagnon.com/varia/deep.html
+		https://www.rgagnon.com/varia/asciiart1.html
+		https://www.rgagnon.com/topics/java-deprecated.html
+		https://www.rgagnon.com/topics/java-language.html
+		https://www.rgagnon.com/topics/java-stringnumber.html
+		https://www.rgagnon.com/topics/java-awt.html
+		https://www.rgagnon.com/topics/java-swing.html
+		https://www.rgagnon.com/topics/java-env.html
+		https://www.rgagnon.com/topics/java-io.html
+		https://www.rgagnon.com/topics/java-js.html
+		https://www.rgagnon.com/topics/java-jdbc.html
+		https://www.rgagnon.com/topics/java-thread.html
+		https://www.rgagnon.com/topics/java-net.html
+		https://www.rgagnon.com/topics/java-jsp.html
+		https://www.rgagnon.com/topics/java-xml.html
+		https://www.rgagnon.com/topics/java-inter.html
+		https://www.rgagnon.com/topics/java-security.html
+		https://www.rgagnon.com/topics/java-jni.html
+		https://www.rgagnon.com/topics/java-date.html
+		https://www.rgagnon.com/topics/java-os.html
+		https://www.rgagnon.com/topics/java-varia.html
+		https://www.rgagnon.com/topics/js-language.html
+		https://www.rgagnon.com/topics/js-htmlcss.html
+		https://www.rgagnon.com/topics/js-form.html
+		https://www.rgagnon.com/topics/java-js.html
+		https://www.rgagnon.com/topics/js-mobile.html
+		https://www.rgagnon.com/topics/js-varia.html
+		https://www.rgagnon.com/topics/pb-powerscript.html
+		https://www.rgagnon.com/topics/pb-winapiregistry.html
+		https://www.rgagnon.com/topics/pb-datawindow.html
+		https://www.rgagnon.com/topics/pb-pfc.html
+		https://www.rgagnon.com/topics/pb-common.html
+		https://www.rgagnon.com/topics/pb-database.html
+		https://www.rgagnon.com/topics/wsh-vbs.html
+		https://www.rgagnon.com/topics/gp.html
+		https://www.rgagnon.com/bigindex.html
+		https://www.rgagnon.com/download/index.html
+		https://www.rgagnon.com/varia/faq-e.html
+		https://www.rgagnon.com/varia/contact.html
+		https://www.rgagnon.com/donate.html
+		https://www.rgagnon.com/varia/funny-1.html
+		https://www.rgagnon.com/varia/funny-2.html
+		https://www.rgagnon.com/varia/funny-3.html
+		https://www.rgagnon.com/varia/funny-4.html
+		https://www.rgagnon.com/varia/oneline.html
+		https://www.rgagnon.com/varia/deep.html
+		https://www.rgagnon.com/varia/asciiart1.html
+		https://www.rgagnon.com/topics/java-deprecated.html
+		https://www.rgagnon.com/howto.html
+		https://www.rgagnon.com/howto.html
+		https://www.rgagnon.com/javadetails/java-0639.html#!
+		https://www.rgagnon.com/javadetails/java-0639.html#!
+		https://www.rgagnon.com/javadetails/java-0639.html#!
+		https://www.rgagnon.com/javadetails/java-0639.html#!
+		https://www.rgagnon.com/javadetails/java-0639.html#!
+		https://www.rgagnon.com/topics/java-stringnumber.html
+		https://www.rgagnon.com/topics/java-net.html
+		http://jsoup.org/
+		https://www.rgagnon.com/javadetails/java-0424.html
+		https://www.rgagnon.com/
+		https://plus.google.com/112049719474141113425?rel=author
+		https://plus.google.com/112049719474141113425
+		https://s7.addthis.com/js/300/addthis_widget.js#pubid=rgagnon
+		https://code.jquery.com/jquery-2.1.1.min.js
+		https://www.rgagnon.com/materialize/js/materialize.min.js
+		https://just-comments.com/auth2.js
+		https://www.rgagnon.com/images/realhowto-small.png
+		https://www.rgagnon.com/images/realhowto-head.png
+		https://www.rgagnon.com/images/m-menu0.png
+		https://www.rgagnon.com/images/m-dd.png
+		https://www.rgagnon.com/images/m-dd.png
+		https://www.rgagnon.com/images/m-dd.png
+		https://www.rgagnon.com/images/m-dd.png
+		https://www.rgagnon.com/images/m-dd.png
+		https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+		https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+		https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+		https://www.paypal.com/images/x-click-but04.gif
+		https://www.rgagnon.com/favicon.ico
+		https://www.rgagnon.com/materialize/css/materialize.min.css
+		https://fonts.googleapis.com/icon?family=Material+Icons
+		https://fonts.googleapis.com/css?family=Inconsolata
+		https://www.rgagnon.com/feed.xml
+		https://www.rgagnon.com/howto.css
+	}
+
+}

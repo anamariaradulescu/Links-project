@@ -1,0 +1,59 @@
+package com.example.demo.functionality;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.example.demo.model.Link;
+
+public class UrlParser {
+	 public UrlParser() {}
+	
+	public static List<Link>extractLinks(String url) throws IOException {
+	    final ArrayList<Link> result = new ArrayList<>();
+	    Link internLink= new Link();
+	    internLink.setUrl(url);
+	    internLink.setType("intern");
+	    internLink.setInternLinkId(null);
+	    
+
+	    Document doc = Jsoup.connect(url).get();
+
+	    Elements links = doc.select("a[href]");
+	    Elements media = doc.select("[src]");
+	    Elements imports = doc.select("link[href]");
+
+	    for (Element link : links) {
+	    	Link externLink= new Link();
+	    	externLink.setInternLinkId(internLink.getInternLinkId());
+	    	externLink.setType("extern");
+	    	externLink.setUrl(link.attr("abs:href"));
+	      result.add(externLink);
+	    }
+
+	    for (Element src : media) {
+	    	Link externLink= new Link();
+	    	externLink.setInternLinkId(internLink.getInternLinkId());
+	    	externLink.setType("extern");
+	    	externLink.setUrl(src.attr("abs:src"));
+	      result.add(externLink);
+	    }
+
+
+	    for (Element link : imports) {
+	    	Link externLink= new Link();
+	    	externLink.setInternLinkId(internLink.getInternLinkId());
+	    	externLink.setType("extern");
+	    	externLink.setUrl(link.attr("abs:href"));
+	      result.add(externLink);
+	    }
+	    return result;
+	  }
+	
+
+}

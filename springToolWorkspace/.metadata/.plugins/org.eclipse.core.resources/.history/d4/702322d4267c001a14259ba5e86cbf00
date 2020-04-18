@@ -1,0 +1,24 @@
+package com.example.demo;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.demo.functionality.UrlParser;
+
+@SpringBootTest
+class DemoApplicationTests {
+
+	@Test
+	void extractLinksTest() throws IOException {
+		UrlParser urlParser= new UrlParser();
+		String site = "https://www.google.com";
+	    List<String> links = urlParser.extractLinks(site);
+	    for (String link : links) {
+	      System.out.println(link);
+	    }
+	}
+}

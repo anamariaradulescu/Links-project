@@ -1,0 +1,28 @@
+package com.example.demo.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entities.Domain;
+import com.example.demo.entities.Link;
+
+@Service
+public class LinkServiceImpl extends AbstractServiceBaseImpl implements LinkService {
+
+	@Override
+	public boolean domainExists(String name) {
+
+		return domainRepos.existsByName(name);
+	}
+
+	@Override
+	public List<Link> getLinks(String name) {
+		if (!domainExists(name)) {
+			return null;
+		}
+		
+		Domain domain=
+	}
+
+}

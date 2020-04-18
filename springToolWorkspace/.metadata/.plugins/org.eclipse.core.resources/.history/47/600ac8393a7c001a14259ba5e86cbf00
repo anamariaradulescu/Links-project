@@ -1,0 +1,11 @@
+package com.example.demo.beans;
+
+import java.util.List;
+
+import com.example.demo.entities.Link;
+
+public class RspLinkList {
+	
+	private List<Link> linkList;
+
+}

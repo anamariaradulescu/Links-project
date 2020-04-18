@@ -1,0 +1,23 @@
+package com.example.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.entities.Domain;
+import com.example.demo.repos.DomainRepository;
+import com.example.demo.repos.LinkRepository;
+
+public abstract class AbstractServiceBaseImpl {
+	
+	@Autowired
+	protected LinkRepository linkRepos;
+	
+	@Autowired
+	protected DomainRepository domainRepos;
+	
+	protected final Domain getDomainEntity(String name) {
+		
+		Optional<Domain> domain = domainRepos.findByName(name);
+		
+	}
+
+}

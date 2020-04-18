@@ -1,0 +1,51 @@
+package com.example.demo.swagger;
+
+@Configuration
+
+@EnableSwagger2
+
+public class SwaggerConfig {
+
+      
+
+       @Autowired
+
+       ProjectMetaProperties p;
+
+      
+
+       private static final Contact DEFAULT_CONTACT = new Contact("Gerald Wegner", "", "gerald.wegner@softshore.net");
+
+      
+
+       private static final Set<String> DEFAULT_PRODUCES_AND_CONSUMES = new HashSet<String>(Arrays.asList("application/json", "application/xml"));
+
+ 
+
+       @Bean
+
+       public Docket api() {
+
+              String version = p.getProjectVersion() + " (" + p.getBuildTimestamp() + ")";
+
+              ApiInfo apiInfo = new ApiInfo(p.getApplicationName(), "API Documentation", version, "urn:tos",
+
+                        DEFAULT_CONTACT, "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0");
+
+             
+
+             
+
+              return new Docket(DocumentationType.SWAGGER_2)
+
+                           .apiInfo(apiInfo)
+
+                           .produces(DEFAULT_PRODUCES_AND_CONSUMES)
+
+                           .consumes(DEFAULT_PRODUCES_AND_CONSUMES);
+
+       }
+
+      
+
+}

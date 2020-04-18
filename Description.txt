@@ -1,0 +1,12 @@
+DB: to save the results I used mySQL DB
+
+backend: to create the main funtionality I used Spring Boot.
+The method ParseUrl recives the url and gets all the urls that are listed on that page. 
+The RestController creates a Post method that gets an Url String as request parameter and sends the result
+ list as a response to the frontend.
+
+frontend: the results can be visualised with
+1. SwaggerUI on port 8090: http://localhost:8090/swagger-ui.html
+2. In the GUI which I have created using Angular. There is a problem with Cors Policy which I have 
+tried to solve in different ways but I did not managed to.
+So I mocked a list of links just as example.
