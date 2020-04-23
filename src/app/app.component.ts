@@ -8,7 +8,6 @@ import { Link } from './link';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'linksFrontend';
   public searchText:string;
   public links: Link [] = new Array<Link>();
 
